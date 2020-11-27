@@ -5,7 +5,7 @@ namespace App\Models;
 use Backpack\CRUD\app\Models\Traits\CrudTrait;
 use Illuminate\Database\Eloquent\Model;
 
-class Base_rolls extends Model
+class BaseRolls extends Model
 {
     use CrudTrait;
 
