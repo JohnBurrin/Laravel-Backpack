@@ -20,9 +20,9 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // Create Super USer
-        $administrator = User::where('email', 'ambassador@example.com')->first();
+        $administrator = User::where('email', 'admin@example.com')->first();
         if (! $administrator) {
-            $administrator = \App\Models\User::factory(User::class)->create([
+            $administrator = User::factory(User::class)->create([
                 'name' => 'Administrator',
                 'email' => 'admin@example.com',
             ]);
@@ -33,7 +33,7 @@ class DatabaseSeeder extends Seeder
         // Create 10 random users
         DB::table('users')->insert([
             'name' => Str::random(10),
-            'email' => Str::random(10).'@gmail.com',
+            'email' => Str::random(10).'@example.com',
             'password' => Hash::make('password'),
         ]);
         \App\Models\User::factory(10)->create();
