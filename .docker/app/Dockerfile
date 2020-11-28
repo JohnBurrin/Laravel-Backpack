@@ -21,7 +21,7 @@ RUN docker-php-ext-install -j $(nproc) pcntl
 
 # required for Intervention
 RUN apt-get update \
-    && apt-get install -y libpng-dev libjpeg-dev \
+    && apt-get install -y libpng-dev libjpeg-dev mc \
     && docker-php-ext-configure gd --with-jpeg \
     && docker-php-ext-install -j $(nproc) gd
 

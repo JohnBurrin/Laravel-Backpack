@@ -11,7 +11,7 @@ return [
     'name' => 'Name',
     'open' => 'Open',
     'page' => 'page',
-    'page_name' => 'Page name (only seen by admins)',
+    'page_name' => 'Page name (as it will appear in the menus)',
     'page_slug' => 'Page Slug (URL)',
     'page_slug_hint' => 'Will be automatically generated from your title, if left empty.',
     'page_title' => 'Page Title',
