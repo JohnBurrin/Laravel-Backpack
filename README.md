@@ -15,6 +15,7 @@ First check out this repo and from inside the repo direectory
 (optional)
 1. `php artisan db:seed`
 
+Once compleated you should me able to view the site on your host machine by browsing to http://localhost/
 
 ## Please Read
 This section contains specific information about software version and any plugins that have been used, these plugins should already be configured to work once a build has completed.
@@ -29,4 +30,3 @@ This section contains specific information about software version and any plugin
 		. Page Manager - https://github.com/Laravel-Backpack/PageManager
 		. Permission Manager - https://github.com/Laravel-Backpack/PermissionManager
 		. Revise Operation - https://github.com/Laravel-Backpack/revise-operation
-		
