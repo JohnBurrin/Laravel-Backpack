@@ -3,5 +3,5 @@
     @php
      echo $page->content;
     @endphp
-
+<a href="/welcome">Back</a>
 @endsection

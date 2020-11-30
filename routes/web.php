@@ -15,12 +15,12 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes(['verify' => true]);
 
+
+Route::get('/auth/logout', 'Auth\LoginController@logout')->name('logout');
 Route::get('/', 'App\Http\Controllers\PageController@homepage')->name('home');
+Route::get('/welcome', 'App\Http\Controllers\PageController@welcome')->name('welcome');
+#Route::get('/welcome', [App\Http\Controllers\PageController::class, 'index'])->name('welcome');
 
 /** CATCH-ALL ROUTE for Backpack/PageManager - needs to be at the end of your routes.php file  **/
 Route::get('{page}/{subs?}', ['uses' => '\App\Http\Controllers\PageController@index'])
 ->where(['page' => '^(((?=(?!admin))(?=(?!\/)).))*$', 'subs' => '.*']);
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

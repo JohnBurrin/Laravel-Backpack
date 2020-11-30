@@ -25,6 +25,14 @@ trait PageTemplates
         $this->crud->field('template')->tab('Detail');
         $this->crud->field('title')->tab('Detail');
         $this->crud->field('slug')->tab('Detail');
+        $this->crud->addField([
+            'name' => 'is_featured',
+            'label' => 'Featured Page',
+            'type' => 'checkbox',
+            // 'fake' => true,
+            // 'store_in' => 'extras',
+            'tab' => 'Detail'
+        ]);
 
         $this->crud->addField([   // CustomHTML
                         'name' => 'metas_separator',

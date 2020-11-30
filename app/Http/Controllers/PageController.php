@@ -27,4 +27,12 @@ class PageController extends Controller
     {
         return view('home', []);
     }
+
+    public function welcome()
+    {
+        $this->data['latest'] = Page::orderBy('updated_at', 'desc')->take(10)->get();
+        $this->data['featured'] = Page::orderBy('created_at', 'desc')->where('is_featured', 1)->take(10)->get();
+        $this->data['pages'] = Page::all();
+        return view('welcome', $this->data);
+    }
 }
