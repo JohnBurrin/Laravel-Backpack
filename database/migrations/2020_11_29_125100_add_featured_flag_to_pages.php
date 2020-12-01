@@ -14,7 +14,7 @@ class AddFeaturedFlagToPages extends Migration
     public function up()
     {
         Schema::table('pages', function (Blueprint $table) {
-            $table->boolean('is_featured')->after('extras');
+            $table->boolean('is_featured')->after('extras')->default(0);
         });
     }
 

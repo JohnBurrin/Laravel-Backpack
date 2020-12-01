@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Backpack\PageManager\app\Models\Page;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
+use Carbon\Carbon;
 
 class PageController extends Controller
 {
@@ -30,9 +32,11 @@ class PageController extends Controller
 
     public function welcome()
     {
+        $pages = Page::all();
+        $this->data['newpages'] = Page::orderBy('created_at', 'desc')->where('created_at', '<=', Carbon::today()->addDays(7))->take(2)->get();
         $this->data['latest'] = Page::orderBy('updated_at', 'desc')->take(10)->get();
-        $this->data['featured'] = Page::orderBy('created_at', 'desc')->where('is_featured', 1)->take(10)->get();
-        $this->data['pages'] = Page::all();
+        $this->data['featured'] = Page::orderBy('created_at', 'desc')->where('is_featured', true)->take(10)->get();
+        $this->data['pages'] = $pages;
         return view('welcome', $this->data);
     }
 }

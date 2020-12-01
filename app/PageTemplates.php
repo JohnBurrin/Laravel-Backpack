@@ -25,14 +25,7 @@ trait PageTemplates
         $this->crud->field('template')->tab('Detail');
         $this->crud->field('title')->tab('Detail');
         $this->crud->field('slug')->tab('Detail');
-        $this->crud->addField([
-            'name' => 'is_featured',
-            'label' => 'Featured Page',
-            'type' => 'checkbox',
-            // 'fake' => true,
-            // 'store_in' => 'extras',
-            'tab' => 'Detail'
-        ]);
+        $this->crud->field('is_featured')->tab('Detail');
 
         $this->crud->addField([   // CustomHTML
                         'name' => 'metas_separator',
@@ -71,8 +64,14 @@ trait PageTemplates
         $this->crud->addField([
                         'name' => 'content',
                         'label' => trans('backpack::pagemanager.content'),
-                        'type' => 'wysiwyg',
+                        'type' => 'ckeditor',
                         'placeholder' => trans('backpack::pagemanager.content_placeholder'),
+                        'options' => [
+                            //'removeButtons' => 'Image',
+                            'contentsCss' => 'https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css',
+                            'allowedContent' => true
+
+                        ],
                         'tab' => 'Content'
                     ]);
     }

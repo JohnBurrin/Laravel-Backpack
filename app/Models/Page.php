@@ -13,9 +13,7 @@ use Backpack\PageManager\app\Models\Page as ParentModel;
  */
 class Page extends ParentModel
 {
-    protected $fillable = [
-        'is_featured'
-    ];
+    protected $fillable = ['template', 'name', 'title', 'slug', 'content', 'extras', 'is_featured'];
 
     public function getFaqsAttribute()
     {

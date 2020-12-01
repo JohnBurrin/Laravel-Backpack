@@ -15,7 +15,9 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes(['verify' => true]);
 
-
+Route::get('/', function () {
+    // Only authenticated users may enter...
+})->middleware('auth');
 Route::get('/auth/logout', 'Auth\LoginController@logout')->name('logout');
 Route::get('/', 'App\Http\Controllers\PageController@homepage')->name('home');
 Route::get('/welcome', 'App\Http\Controllers\PageController@welcome')->name('welcome');
