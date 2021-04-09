@@ -11,14 +11,16 @@ use Illuminate\Support\Str;
 use Spatie\Permission\Traits\HasRoles;
 use Venturecraft\Revisionable\RevisionableTrait;
 
-use App\Jobs\UpdateUserInStripe;
-use App\Jobs\SendWelcomeEmail;
 use Illuminate\Support\Facades\Storage;
 
 class User extends Authenticatable
 {
     //use HasFactory, Notifiable, HasRoles;
-    use HasFactory, Notifiable, HasRoles, CrudTrait, RevisionableTrait;
+    use HasFactory; 
+    use Notifiable; 
+    use HasRoles;
+    use CrudTrait;
+    use RevisionableTrait;
 
     /**
      * The attributes that are mass assignable.

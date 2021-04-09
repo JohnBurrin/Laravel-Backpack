@@ -3,11 +3,19 @@
 namespace App\Models;
 
 use Backpack\CRUD\app\Models\Traits\CrudTrait;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Traits\UuidModel;
+use Illuminate\Support\Str;
+use Venturecraft\Revisionable\RevisionableTrait;
+
 
 class Customer extends Model
 {
     use CrudTrait;
+    use HasFactory;
+    use RevisionableTrait;
+    use UuidModel;
 
     /*
     |--------------------------------------------------------------------------
@@ -19,7 +27,10 @@ class Customer extends Model
     // protected $primaryKey = 'id';
     // public $timestamps = false;
     protected $guarded = ['id'];
-    // protected $fillable = [];
+    protected $fillable = [
+        'name',
+        'uuid'
+    ];
     // protected $hidden = [];
     // protected $dates = [];
 

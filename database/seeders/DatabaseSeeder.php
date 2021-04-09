@@ -31,6 +31,7 @@ class DatabaseSeeder extends Seeder
         $administrator->assignRole('Super Administrator');
 
         // Create 10 random users
-        \App\Models\User::factory(10)->create();
+        //\App\Models\User::factory(10)->create();
+        \App\Models\Customer::factory(10)->create();
     }
 }
